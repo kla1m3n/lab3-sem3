@@ -11,10 +11,9 @@ int main()
     values[1] = 20;
     values[2] = 30;
 
-    // Intentional error for the first stage of the laboratory work:
-    // valid indices are 0, 1 and 2, but value_count is equal to 3.
-    const std::size_t invalid_index = value_count;
+    // The last valid index is one less than the number of elements.
+    const std::size_t last_index = value_count - 1;
 
-    std::cout << "Value: " << values[invalid_index] << '\n';
+    std::cout << "Value: " << values[last_index] << '\n';
     return 0;
 }

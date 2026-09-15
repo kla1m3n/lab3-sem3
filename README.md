@@ -20,6 +20,6 @@ cmake --build --preset asan
 ctest --preset asan
 ```
 
-The first version of the laboratory program intentionally reads past the end of
-a vector. The sanitizer check is therefore expected to fail. After the error is
-documented, the invalid index will be fixed and the same check will pass.
+The first commit of the laboratory program intentionally reads past the end of
+a dynamic array, so the sanitizer check fails with `heap-buffer-overflow`. The
+current version uses the last valid index and passes the same check.
