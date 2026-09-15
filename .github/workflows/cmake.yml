@@ -1,0 +1,25 @@
+name: C++ CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  sanitizer-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Install Ninja
+        run: sudo apt-get update && sudo apt-get install --yes ninja-build
+
+      - name: Configure with sanitizer preset
+        run: cmake --preset asan
+
+      - name: Build with sanitizer preset
+        run: cmake --build --preset asan
+
+      - name: Run checks with sanitizers
+        run: ctest --preset asan
