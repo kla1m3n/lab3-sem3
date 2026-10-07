@@ -1,8 +1,7 @@
 {
   "name": "C++ Lab Environment",
-  "image": "mcr.microsoft.com/devcontainers/cpp:1-ubuntu-24.04",
-  "features": {
-    "ghcr.io/devcontainers/features/cmake:1": {}
+  "build": {
+    "dockerfile": "Dockerfile"
   },
   "customizations": {
     "vscode": {

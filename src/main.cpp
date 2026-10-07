@@ -11,7 +11,6 @@ int main()
     values[1] = 20;
     values[2] = 30;
 
-    // The last valid index is one less than the number of elements.
     const std::size_t last_index = value_count - 1;
 
     std::cout << "Value: " << values[last_index] << '\n';
