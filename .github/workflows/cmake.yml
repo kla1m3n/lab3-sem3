@@ -3,6 +3,10 @@ name: C++ CI
 on:
   push:
   pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
   sanitizer-check:
@@ -22,4 +26,4 @@ jobs:
         run: cmake --build --preset asan
 
       - name: Run checks with sanitizers
-        run: ctest --preset asan
+        run: ctest --preset asan --verbose
